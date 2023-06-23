@@ -1,0 +1,51 @@
+@use "../variables"
+
+.header
+  position: fixed
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: darkslateblue
+  box-shadow: 0 0 2rem variables.$color__shadow
+  z-index: 100
+
+  & > .container
+    display: grid
+    gap: variables.$gap__m
+    grid-template-columns: 4rem 1fr
+
+  &__
+    &link
+      display: flex
+      align-items: center
+  .nav
+    overflow-x: auto
+    &__ul
+        flex-wrap: nowrap
+    &__link
+      display: inline-block
+      text-decoration: none
+      width: max-content
+      color: variables.$color__bg
+      box-sizing: border-box
+      padding: variables.$gap__m
+      &:not(.button)
+        color: variables.$color__bg
+      &--active
+        font-weight: bold
+
+
+.button
+  display: inline-block
+  padding: 5px 10px
+  background-color: black
+  color: white
+  text-align: center
+  text-decoration: none
+  border-radius: 4px
+  border: none
+  cursor: pointer
+  font-size: 16px
+
+.button:hover
+  background-color: gray

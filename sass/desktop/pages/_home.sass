@@ -1,0 +1,107 @@
+@use "variables"
+
+.hero
+  & > .container
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: repeat(3, auto)
+    grid-template-areas: "title image" "description image" "link image"
+    gap: variables.$gap__xl
+    margin-top: variables.$gap__xl
+  &__hgroup
+    grid-area: title
+  &__title
+    margin-bottom: 0
+    font-size: variables.$gap__xl
+  &__description
+    grid-area: description
+    margin-top: 0
+  &__link
+    grid-area: link
+  &__image
+    grid-area: image
+  &__text-blue
+    color: darkslateblue
+
+.cases
+  padding-top: variables.$gap__xl
+  &__hgroup
+    margin-bottom: variables.$gap__xl
+    padding-block: variables.$gap__xxl
+  &__title
+    margin-bottom: 0
+    font-size: variables.$gap__xxl
+    text-align: center
+    color: darkslateblue
+  &__subtitle
+    font-size: variables.$gap__m
+    text-align: center
+    padding-bottom: variables.$gap__m
+
+  &__items
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: variables.$gap__xxl
+
+.cases-item
+  border-radius: variables.$gap__m
+  box-shadow: 0 0 1rem variables.$color__shadow
+  transition: .5s
+  &:hover
+    transform: scale(1.1)
+
+  &__cover
+    height: 14rem
+    border-top-left-radius: variables.$gap__m
+    border-top-right-radius: variables.$gap__m
+  &__hgroup
+    padding: variables.$gap__m
+  &__title
+    margin-bottom: 0
+  &__summary
+    margin-top: variables.$gap__s
+    min-height: variables.$gap__xl
+  &__link
+    display: block
+
+.ultima-hora
+  display: flex
+  align-items: center
+  text-align: center
+
+
+.circulo
+  align-items: center
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  background-color: red
+  margin-top: 20px
+  margin-right: 10px
+  animation: sonar 1s infinite
+
+.container-circulo
+  display: flex
+  justify-content: center
+  align-items: center
+
+@keyframes sonar
+  0%
+    transform: scale(0.1)
+    opacity: 0.5
+  50%
+    transform: scale(0.5)
+    opacity: 0.8
+  100%
+    transform: scale(1)
+    opacity: 0
+
+.video
+  padding-block: 10rem
+  text-align: center
+  &__subtitle
+    margin-block: variables.$gap__xl
+
+
+
+
